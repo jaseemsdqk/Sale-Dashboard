@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <t t-name="sale_dashboard.DropZone">
+        <div
+            t-ref="dropZone"
+            t-att-class="props.isEditMode ? 'drop-zone active' : 'drop-zone'"
+            t-on-dragover="onDragOver"
+            t-on-drop="onDrop"
+        >
+            <t t-if="props.isEditMode and !state.showRevenueCOGSChart and !state.showSalesTrendChart">
+                <div class="drop-placeholder">
+                    <i class="fa fa-plus-circle fa-3x text-muted mb-3"></i>
+                    <h5 class="text-muted">Drop Chart Components Here</h5>
+                    <p class="text-muted">Drag and drop charts from the sidebar to customize your dashboard</p>
+                </div>
+            </t>
+
+            <!-- Charts Container -->
+            <div class="charts-container">
+                <!-- Revenue vs COGS Chart -->
+                <t t-if="state.showRevenueCOGSChart">
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <RevenueCOGSChart
+                                isEditMode="props.isEditMode"
+                                onRemove="() => this.removeRevenueCOGSChart()"
+                            />
+                        </div>
+                    </div>
+                </t>
+
+                <!-- Sales Trend Chart -->
+                <t t-if="state.showSalesTrendChart">
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <SalesTrendChart
+                                isEditMode="props.isEditMode"
+                                onRemove="() => this.removeSalesTrendChart()"
+                            />
+                        </div>
+                    </div>
+                </t>
+            </div>
+        </div>
+    </t>
+</templates>

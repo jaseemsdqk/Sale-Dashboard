@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <t t-name="sale_dashboard.SaleDashboard">
+        <div t-ref="root" class="o_sale_dashboard container-fluid py-4">
+            <!-- Header -->
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h3 class="mb-0">Sales Dashboard</h3>
+                <button class="btn btn-outline-primary btn-sm" t-on-click="toggleEditMode">
+                    <i class="fa fa-pencil me-1"></i>
+                    <t t-if="!state.isEditMode">Edit Dashboard</t>
+                    <t t-else="">Exit Edit</t>
+                </button>
+            </div>
+
+            <div class="row position-relative">
+                <!-- Sidebar -->
+                <ChartSidebar
+                    t-if="state.sidebarVisible"
+                    isVisible="state.sidebarVisible"
+                    onClose="closeSidebar"
+                />
+
+                <!-- Main Content -->
+                <div t-att-class="state.sidebarVisible ? 'col-md-9' : 'col-12'">
+                    <!-- KPI Cards -->
+                    <KpiCards dashboardData="state.dashboardData" />
+
+                    <!-- Drop Zone -->
+                    <DropZone
+                        isEditMode="state.isEditMode"
+                        onChartAdded="() => {}"
+                    />
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

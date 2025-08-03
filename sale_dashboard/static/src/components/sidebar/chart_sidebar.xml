@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <t t-name="sale_dashboard.ChartSidebar">
+        <div class="col-md-3 sidebar-panel">
+            <div class="card h-100">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h6 class="mb-0">Dashboard Components</h6>
+                    <button class="btn btn-sm btn-outline-secondary" t-on-click="closeSidebar">
+                        <i class="fa fa-times"></i>
+                    </button>
+                </div>
+                <div class="card-body">
+                    <!-- Revenue vs COGS Chart -->
+                    <div class="component-item mb-3">
+                        <div
+                            t-ref="dragElement"
+                            class="draggable-chart p-3 border border-dashed border-primary rounded"
+                            draggable="true"
+                            t-on-dragstart="(ev) => onDragStart(ev, 'revenue-cogs-chart')"
+                            t-on-dragend="onDragEnd"
+                        >
+                            <div class="d-flex align-items-center">
+                                <i class="fa fa-bar-chart me-2 text-primary"></i>
+                                <div>
+                                    <strong>Revenue vs COGS Chart</strong>
+                                    <small class="d-block text-muted">Bar chart showing revenue and cost comparison by product category</small>
+                                </div>
+                            </div>
+                            <div class="drag-handle mt-2">
+                                <i class="fa fa-arrows text-muted"></i>
+                                <small class="text-muted ms-1">Drag to dashboard</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sales Trend Line Chart -->
+                    <div class="component-item mb-3">
+                        <div
+                            t-ref="lineChartDragElement"
+                            class="draggable-chart p-3 border border-dashed border-success rounded"
+                            draggable="true"
+                            t-on-dragstart="(ev) => onDragStart(ev, 'sales-trend-chart')"
+                            t-on-dragend="onDragEnd"
+                        >
+                            <div class="d-flex align-items-center">
+                                <i class="fa fa-line-chart me-2 text-success"></i>
+                                <div>
+                                    <strong>Sales Trend Chart</strong>
+                                    <small class="d-block text-muted">Line chart showing sales trends over the last 30 days</small>
+                                </div>
+                            </div>
+                            <div class="drag-handle mt-2">
+                                <i class="fa fa-arrows text-muted"></i>
+                                <small class="text-muted ms-1">Drag to dashboard</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

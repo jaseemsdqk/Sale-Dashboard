@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_order_form_inherit_sale_dashboard" model="ir.ui.view">
+        <field name="name">sale.order.list.dashboard</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_quotation_tree_with_onboarding"/>
+        <field name="arch" type="xml">
+            <xpath expr="//list" position="attributes">
+                <attribute name="js_class">sale_dashboard_list</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Add search filters for dashboard functionality -->
+<!--    <record id="view_sales_order_filter_inherit_dashboard" model="ir.ui.view">-->
+<!--        <field name="name">sale.order.search.dashboard</field>-->
+<!--        <field name="model">sale.order</field>-->
+<!--        <field name="inherit_id" ref="sale.view_sales_order_filter"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <xpath expr="//search" position="inside">-->
+<!--                <filter string="Draft Quotations" name="draft_quotations"-->
+<!--                        domain="[('state', '=', 'draft')]"/>-->
+<!--                <filter string="Sent Quotations" name="sent_quotations"-->
+<!--                        domain="[('state', '=', 'sent')]"/>-->
+<!--                <filter string="Overdue Quotations" name="overdue_quotations"-->
+<!--                        domain="[('state', 'in', ['draft', 'sent']), ('validity_date', '&lt;', context_today().strftime('%Y-%m-%d'))]"/>-->
+<!--                <filter string="My Sales" name="my_sales"-->
+<!--                        domain="[('user_id', '=', uid)]"/>-->
+<!--            </xpath>-->
+<!--        </field>-->
+<!--    </record>-->
+</odoo>

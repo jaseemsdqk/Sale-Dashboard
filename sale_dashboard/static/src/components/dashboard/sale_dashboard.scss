@@ -1,0 +1,22 @@
+.o_sale_dashboard {
+    background-color: #f8f9fa;
+
+    .btn {
+        transition: all 0.2s ease;
+
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+    }
+
+    .fs-2 {
+        font-weight: bold;
+        color: #fff;
+    }
+
+    .bg-100 {
+        background-color: #e9ecef !important;
+        border-radius: 4px;
+    }
+}

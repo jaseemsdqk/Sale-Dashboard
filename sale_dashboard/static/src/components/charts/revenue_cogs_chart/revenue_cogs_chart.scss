@@ -1,0 +1,30 @@
+.chart-card {
+    .chart-container {
+        position: relative;
+
+        canvas {
+            max-width: 100%;
+            height: auto !important;
+        }
+    }
+
+    .card-header {
+        background-color: #f8f9fa;
+        border-bottom: 1px solid #dee2e6;
+
+        .card-title {
+            color: #495057;
+            font-weight: 600;
+        }
+
+        .btn-outline-danger {
+            border-color: #dc3545;
+            color: #dc3545;
+
+            &:hover {
+                background-color: #dc3545;
+                border-color: #dc3545;
+            }
+        }
+    }
+}

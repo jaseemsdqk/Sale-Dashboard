@@ -1,0 +1,41 @@
+.sidebar-panel {
+    .draggable-chart {
+        cursor: move;
+        transition: all 0.2s ease;
+
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        &.border-primary:hover {
+            border-color: #007bff !important;
+            background-color: rgba(0,123,255,0.05);
+        }
+
+        &.border-success:hover {
+            border-color: #28a745 !important;
+            background-color: rgba(40,167,69,0.05);
+        }
+    }
+
+    .drag-handle {
+        display: flex;
+        align-items: center;
+        opacity: 0.7;
+
+        i {
+            font-size: 12px;
+        }
+    }
+
+    .component-item {
+        .text-primary {
+            color: #007bff !important;
+        }
+
+        .text-success {
+            color: #28a745 !important;
+        }
+    }
+}

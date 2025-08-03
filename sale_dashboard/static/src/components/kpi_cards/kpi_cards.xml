@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <t t-name="sale_dashboard.KpiCards">
+        <div class="row mb-4">
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card kpi-card">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <div class="kpi-icon bg-primary">
+                                <i class="fa fa-shopping-cart text-white"></i>
+                            </div>
+                            <div class="ms-3">
+                                <div class="kpi-value" t-esc="props.dashboardData.totalSaleOrders"></div>
+                                <div class="kpi-label">Total Sale Orders</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card kpi-card">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <div class="kpi-icon bg-success">
+                                <i class="fa fa-dollar-sign text-white"></i>
+                            </div>
+                            <div class="ms-3">
+                                <div class="kpi-value" t-esc="formatCurrency(props.dashboardData.totalRevenue)"></div>
+                                <div class="kpi-label">Total Revenue</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card kpi-card">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <div class="kpi-icon bg-info">
+                                <i class="fa fa-calendar-day text-white"></i>
+                            </div>
+                            <div class="ms-3">
+                                <div class="kpi-value" t-esc="props.dashboardData.totalOrdersToday"></div>
+                                <div class="kpi-label">Orders Today</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card kpi-card">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <div class="kpi-icon bg-warning">
+                                <i class="fa fa-chart-line text-white"></i>
+                            </div>
+                            <div class="ms-3">
+                                <div class="kpi-value" t-esc="formatCurrency(props.dashboardData.averageOrderValue)"></div>
+                                <div class="kpi-label">Avg. Order Value</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>
