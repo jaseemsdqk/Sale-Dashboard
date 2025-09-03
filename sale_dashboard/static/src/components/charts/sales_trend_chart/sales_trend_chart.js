@@ -116,6 +116,7 @@ export class SalesTrendChart extends Component {
     }
 
     renderChart() {
+        console.log("Rendering sales trend chart with data:", this.state.chartData);
         if (!this.salesTrendChartRef.el || typeof Chart === 'undefined') {
             setTimeout(() => {
                 if (typeof Chart !== 'undefined') {
@@ -128,6 +129,7 @@ export class SalesTrendChart extends Component {
         destroyChart(this.chart);
 
         try {
+            console.log("Sales Trend Chart Data:", this.state.chartData);
             const ctx = this.salesTrendChartRef.el.getContext('2d');
             if (ctx && this.state.chartData.labels.length > 0) {
                 this.chart = new Chart(ctx, {

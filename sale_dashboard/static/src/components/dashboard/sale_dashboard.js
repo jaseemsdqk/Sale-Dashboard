@@ -15,6 +15,7 @@ export class SaleDashBoard extends Component {
     setup() {
         this.busService = this.env.services.bus_service;
         this.busService.addChannel("handle_sale_update");
+        console.log()
         this.busService.subscribe("notification", this.handleSaleUpdate.bind(this));
 
         this.orm = useService("orm");
@@ -72,10 +73,12 @@ export class SaleDashBoard extends Component {
     }
 
     handleSaleUpdate() {
+        console.log("handleSaleUpdate")
         this.loadDashboardData();
     }
 
     async loadDashboardData() {
+        console.log("Loading dashboard data...");
         const cacheKey = "main";
         if (!navigator.onLine) {
             const cachedData = await getCache(dashboardStore, cacheKey);
@@ -130,6 +133,8 @@ export class SaleDashBoard extends Component {
 
             this.state.dashboardData = dashboardCopy;
             await setCache(dashboardStore, cacheKey, dashboardCopy);
+            console.log("Dashboard data loaded and cached.!!!!!!!!!!");
+
         } catch (error) {
             console.error("Error loading dashboard data:", error);
             this.notification.add("Error loading dashboard data", {type: "danger"});

@@ -7,7 +7,7 @@
         This module adds a dashboard to the sale order list view
         showing key metrics and statistics.
     """,
-    'depends': ['sale_management', 'web'],
+    'depends': ['sale_management', 'web','stock'],
     'data': [
         'views/sale_order_views.xml',
     ],
