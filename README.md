@@ -30,12 +30,45 @@ A modern, interactive sales dashboard for Odoo with drag-and-drop functionality,
 - **Loading States** - Visual feedback during data loading
 - **Error Handling** - Graceful error messages and fallback mechanisms
 
+---
+
+## 📸 Screenshots
+
+### 1) Dashboard Sales Order List View
+Here we can see the sales dashboard with the order list.  
+Click **"Edit Dashboard"** to customize.
+
+![Screenshot 1](/sale_dashboard/static/src/img/1.png)
+
+---
+
+### 2) Drag & Drop Interface
+When edit mode is enabled, you can drag and drop chart components.  
+Currently, two charts are available:
+- **Revenue vs COGS Chart**
+- **Sales Trend Chart**
+
+![Screenshot 2](/sale_dashboard/static/src/img/2.png)
+
+---
+
+### 3) Revenue vs COGS Chart
+Example of a bar chart comparing revenue and cost by product category.
+
+![Screenshot 3](/sale_dashboard/static/src/img/3.png)
+
+---
+
 ## 📋 Prerequisites
 
-- Odoo 16.0 or higher
-- Chart.js library (included)
-- Modern web browser with IndexedDB support
+- Odoo 16.0 or higher  
+- Chart.js library (included)  
+- Modern web browser with IndexedDB support  
+
+---
 
 ## 🛠️ Installation
 
 1. **Clone the repository**
+   ```bash
+   git clone <repo_url> odoo/addons/sale_dashboard
